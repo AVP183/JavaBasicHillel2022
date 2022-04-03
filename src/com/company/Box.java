@@ -19,16 +19,8 @@ public class Box {
         this.material = material;
     }
 
-    public Box() {
-        
-    }
-
     public void setLength(int length) {
-        if (length > 0) {
-            this.length = length;
-        }
-        System.out.println("Коробка не может быть создана с размерами меньше 1 см");
-            return;
+        this.length = length;
     }
 
     public int getLength() {
@@ -80,5 +72,13 @@ public class Box {
         return String.format("Мы создали коробку с длиной %3d см, с шириной %3d см и высотой %3d см. Объем коробки " +
                         "составит %6d см^3, цвет коробки: %7s, материал: %8s",
                 length, width, height, capacity(length, width, height), color, material);
+    }
+
+    public void checkValues() {
+        if (length <= 0 || width <= 0 || height <= 0) {
+            System.out.println("Введены параметры коробки меньше 1 см");
+        } else {
+            System.out.println(printBoxColorMaterial());
+        }
     }
 }

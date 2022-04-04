@@ -6,8 +6,15 @@ public class Box {
     private int height;
     private String color;
     private String material;
+    private static int counter = 0;
+    private static int countErrors = 0;
+
+    public Box() {
+        counter++;
+    }
 
     public Box(int length, int width, int height) {
+        counter++;
         this.length = length;
         this.width = width;
         this.height = height;
@@ -23,6 +30,19 @@ public class Box {
         this.length = length;
     }
 
+    public void checkSetLength(int length) {
+        if (length > 0) {
+            setLength(length);
+        } else {
+            countErrors++;
+            printSetLengthError();
+        }
+    }
+
+    public void printSetLengthError(){
+        System.out.println("\nОшибка: Коробка номер " + counter + ": глубина коробки введена меньше 1 см");
+    }
+
     public int getLength() {
         return length;
     }
@@ -31,12 +51,38 @@ public class Box {
         this.width = width;
     }
 
+    public void checkSetWidth(int width) {
+        if (width <= 0) {
+            countErrors++;
+            printSetWidthError();
+        } else {
+            setWidth(width);
+        }
+    }
+
+    public void printSetWidthError(){
+        System.out.println("Ошибка: Коробка номер " + counter + ": ширина коробки введена меньше 1 см");
+    }
+
     public int getWidth() {
         return width;
     }
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    public void checkSetHeight(int height) {
+        if (height <= 0) {
+            countErrors++;
+            printSetHeightError();
+        } else {
+            setHeight(height);
+        }
+    }
+
+    public void printSetHeightError(){
+        System.out.println("Ошибка: Коробка номер " + counter + ": высота коробки введена меньше 1 см");
     }
 
     public int getHeight() {
@@ -76,9 +122,23 @@ public class Box {
 
     public void checkValues() {
         if (length <= 0 || width <= 0 || height <= 0) {
-            System.out.println("Введены параметры коробки меньше 1 см");
+            System.out.println("Коробка не может быть создана\n");
         } else {
             System.out.println(printBoxColorMaterial());
+        }
+    }
+
+    public void printCountBoxes() {
+                System.out.println("\nВсего заказов на произведство коробок: " + counter +"\n");
+    }
+
+    public void checkOrder(){
+        int resault = counter-countErrors;
+        if ((resault % 10) == 1){
+            System.out.println("Произведена "+ resault + " коробока");
+        }
+        else {
+            System.out.println("Произведено " + resault + " коробоки");
         }
     }
 }

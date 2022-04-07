@@ -4,13 +4,12 @@ public class Box {
     private int length;
     private int width;
     private int height;
-    private String color;
     private String material;
     private static int counter = 0;
     private static int countErrors = 0;
 
-    public Box() {
-        counter++;
+    public Box(){
+
     }
 
     public Box(int length, int width, int height) {
@@ -20,9 +19,8 @@ public class Box {
         this.height = height;
     }
 
-    public Box(int length, int width, int height, String color, String material) {
+    public Box(int length, int width, int height, String material) {
         this(length, width, height);
-        this.color = color;
         this.material = material;
     }
 
@@ -89,14 +87,6 @@ public class Box {
         return height;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
     public void setMaterial(String material) {
         this.material = material;
     }
@@ -116,8 +106,8 @@ public class Box {
 
     public String printBoxColorMaterial() {
         return String.format("Мы создали коробку с длиной %3d см, с шириной %3d см и высотой %3d см. Объем коробки " +
-                        "составит %6d см^3, цвет коробки: %7s, материал: %8s",
-                length, width, height, capacity(length, width, height), color, material);
+                        "составит %6d см^3, материал: %8s",
+                length, width, height, capacity(length, width, height), material);
     }
 
     public void checkValues() {

@@ -5,23 +5,12 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
+        ColorBox colorBox = new ColorBox(randomValue(), randomValue(), randomValue(), "дерево", "white");
 
-        Box box1 = new Box(randomValue(), randomValue(), randomValue(), "дерево");
-        Box box2 = new Box(randomValue(), randomValue(), randomValue(), "пластик");
-        Box box3 = new Box(randomValue(), randomValue(), randomValue(), "картон");
-        Box box4 = new Box(randomValue(), randomValue(), randomValue(), "текстиль");
-        Box box5 = new Box(randomValue(), randomValue(), randomValue(), "металл");
+        System.out.println(colorBox.printColorBox());
 
-        ColorBox colorBox = new ColorBox();
-
-        System.out.println(box1.printBoxColorMaterial());
-        System.out.println(box2.printBoxColorMaterial());
-        System.out.println(box3.printBoxColorMaterial());
-        System.out.println(box4.printBoxColorMaterial());
-        System.out.println(box5.printBoxColorMaterial());
-
-        box1.printCountBoxes();
-        box1.checkOrder();
+//        box1.printCountBoxes();
+//        box1.checkOrder();
 
     }
 

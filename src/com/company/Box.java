@@ -8,10 +8,6 @@ public class Box {
     private static int counter = 0;
     private static int countErrors = 0;
 
-    public Box(){
-
-    }
-
     public Box(int length, int width, int height) {
         counter++;
         this.length = length;

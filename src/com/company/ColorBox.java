@@ -14,11 +14,6 @@ public class ColorBox extends Box {
         this.color = color;
     }
 
-    public static int randomMatirial() {
-        Random random = new Random();
-        return random.nextInt(1, 6);
-    }
-
     public String printBoxColorMaterial() {
         return String.format("Мы создали коробку с длиной %3d см, с шириной %3d см и высотой %3d см. Объем коробки " +
                         "составит %6d см^3, материал: %8s, color: %s",

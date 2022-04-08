@@ -4,7 +4,7 @@ public class Box {
     private int length;
     private int width;
     private int height;
-    private String material;
+    private Material material;
     private static int counter = 0;
     private static int countErrors = 0;
 
@@ -15,7 +15,7 @@ public class Box {
         this.height = height;
     }
 
-    public Box(int length, int width, int height, String material) {
+    public Box(int length, int width, int height, Material material) {
         this(length, width, height);
         this.material = material;
     }
@@ -83,11 +83,11 @@ public class Box {
         return height;
     }
 
-    public void setMaterial(String material) {
+    public void setMaterial(Material material) {
         this.material = material;
     }
 
-    public String getMaterial() {
+    public Material getMaterial() {
         return material;
     }
 

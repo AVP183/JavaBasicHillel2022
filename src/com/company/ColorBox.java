@@ -21,5 +21,10 @@ public class ColorBox extends Box {
                         super.getHeight()), getMaterial(), color);
     }
 
-
+    @Override
+    public String toString(){
+        StringBuilder resault = new StringBuilder();
+        resault.append(super.toString()).append(", цвет коробки: ").append(color);
+        return resault.toString();
+    }
 }

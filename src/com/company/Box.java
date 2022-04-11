@@ -33,7 +33,7 @@ public class Box {
         }
     }
 
-    public void printSetLengthError(){
+    public void printSetLengthError() {
         System.out.println("\nОшибка: Коробка номер " + counter + ": глубина коробки введена меньше 1 см");
     }
 
@@ -54,7 +54,7 @@ public class Box {
         }
     }
 
-    public void printSetWidthError(){
+    public void printSetWidthError() {
         System.out.println("Ошибка: Коробка номер " + counter + ": ширина коробки введена меньше 1 см");
     }
 
@@ -75,7 +75,7 @@ public class Box {
         }
     }
 
-    public void printSetHeightError(){
+    public void printSetHeightError() {
         System.out.println("Ошибка: Коробка номер " + counter + ": высота коробки введена меньше 1 см");
     }
 
@@ -115,16 +115,25 @@ public class Box {
     }
 
     public void printCountBoxes() {
-                System.out.println("\nВсего заказов на произведство коробок: " + counter +"\n");
+        System.out.println("\nВсего заказов на произведство коробок: " + counter + "\n");
     }
 
-    public void checkOrder(){
-        int resault = counter-countErrors;
-        if ((resault % 10) == 1){
-            System.out.println("Произведена "+ resault + " коробока");
-        }
-        else {
+    public void checkOrder() {
+        int resault = counter - countErrors;
+        if ((resault % 10) == 1) {
+            System.out.println("Произведена " + resault + " коробока");
+        } else {
             System.out.println("Произведено " + resault + " коробоки");
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder resault = new StringBuilder();
+        resault.append("Длина коробки = ").append(length)
+                .append(" см, ширина коробки = ").append(width)
+                .append(" см, высота коробки = ").append(height)
+                .append(" см, материал коробки: ").append(material);
+        return resault.toString();
     }
 }

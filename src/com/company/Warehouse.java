@@ -3,7 +3,7 @@ package com.company;
 import java.util.Random;
 
 public class Warehouse {
-    private static final int capacityWarehouse = 2;
+    private static final int capacityWarehouse = 50;
     private static int counterWarehouse;
     private static int res;
     private int capacity;
@@ -12,30 +12,30 @@ public class Warehouse {
     private int width;
     private int height;
 
-    public Warehouse(){
+    public Warehouse() {
     }
 
-    public int getCapacityWarehouse(){
+    public int getCapacityWarehouse() {
         return capacityWarehouse;
     }
 
     public Warehouse(int length, int width, int height, int capacity) {
-            if (length <= 0 || width <= 0 || height <= 0) {
-                throw new IllegalArgumentException("Ошибка: Проверьте вводимые параметры Д х Ш х В");
-            }
-        arrayAllBox = new Box[capacity];
-        if (counterWarehouse < capacityWarehouse) {
-            for (int i = 0; i < capacity; i++) {
-                counterWarehouse++;
-                arrayAllBox[i] = new Box(length, width, height);
-                System.out.println(arrayAllBox[i]);
-                if (counterWarehouse == capacityWarehouse) {
-                    break;
-                }
-            }
-        } else {
-            System.out.println("Склад заполнен");
+        if (length <= 0 || width <= 0 || height <= 0) {
+            throw new IllegalArgumentException("Ошибка: Проверьте вводимые параметры Д х Ш х В");
         }
+        arrayAllBox = new Box[capacity];
+//        if (counterWarehouse < capacityWarehouse) {
+        for (int i = 0; i < capacity; i++) {
+            counterWarehouse++;
+            arrayAllBox[i] = new Box(length, width, height);
+            System.out.println(arrayAllBox[i]);
+            if (counterWarehouse == capacityWarehouse) {
+                break;
+            }
+        }
+//        } else {
+//            System.out.println("Склад заполнился");
+//        }
     }
 
     public static void addBoxToWarehouse(int capacity) {
@@ -68,8 +68,8 @@ public class Warehouse {
     }
 
 
-//    @Override
-    public String toString(){
+    @Override
+    public String toString() {
         StringBuilder resault = new StringBuilder();
         resault.append("Длина коробки = ").append(length)
                 .append(" см, ширина коробки = ").append(width)

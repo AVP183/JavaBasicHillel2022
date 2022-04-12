@@ -22,7 +22,7 @@ public class ColorBox extends Box {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder resault = new StringBuilder();
         resault.append(super.toString()).append(", цвет коробки: ").append(color);
         return resault.toString();

@@ -5,23 +5,21 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
+        try {
+            ColorBox colorBox1 = new ColorBox(randomValue(), randomValue(), randomValue(),
+                    Material.getMatirial(Material.randomMatirial()), ColorVariant.getColor(ColorVariant.randomColor()));
+            System.out.println(colorBox1.toString());
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
 
-
-//        try {
-//            ColorBox colorBox1 = new ColorBox(randomValue(), randomValue(), randomValue(),
-//                    Material.getMatirial(Material.randomMatirial()), ColorVariant.getColor(ColorVariant.randomColor()));
-//            System.out.println(colorBox1.toString());
-//        } catch (IllegalArgumentException e) {
-//            System.out.println(e.getMessage());
-//        }
-//
-//        try {
-//            ColorBox colorBox2 = new ColorBox(randomValue(), randomValue(), randomValue(),
-//                    Material.getMatirial(Material.randomMatirial()), ColorVariant.getColor(ColorVariant.randomColor()));
-//            System.out.println(colorBox2.toString());
-//        } catch (IllegalArgumentException e) {
-//            System.out.println(e.getMessage());
-//        }
+        try {
+            ColorBox colorBox2 = new ColorBox(randomValue(), randomValue(), randomValue(),
+                    Material.getMatirial(Material.randomMatirial()), ColorVariant.getColor(ColorVariant.randomColor()));
+            System.out.println(colorBox2.toString());
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
 
         try {
             ColorBox colorBox3 = new ColorBox(randomValue(), randomValue(), randomValue(),
@@ -49,9 +47,6 @@ public class Main {
 
         try {
             ColorBox box1 = new ColorBox(1, 1, 1, Material.OTHER, ColorVariant.BLACK);
-            box1.printCountBoxes();
-            System.out.println(box1.printBoxColorMaterial());
-            System.out.println(box1.getCounter());
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
@@ -59,8 +54,6 @@ public class Main {
 
         try {
             Warehouse b1 = new Warehouse(2, 1, 1, 3);
-            System.out.println(Warehouse.printArrayBoxes());
-            System.out.println(Warehouse.valueWarehouseLeft());
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
@@ -71,7 +64,11 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-//        Warehouse b21 = new Warehouse(3, 2, 3, 4);
+        try {
+            Warehouse b3 = new Warehouse(3, 2, 3, 4);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
 
         try {
             Warehouse.addBoxToWarehouse(3);
@@ -79,7 +76,13 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-//        Warehouse.addBoxToWarehouse(22);
+        try {
+            Warehouse.addBoxToWarehouse(32);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+//        System.out.println(Warehouse.);
 
         System.out.println("Свободных мест на складе: " + Warehouse.valueWarehouseLeft());
 

@@ -11,10 +11,9 @@ public class Box {
 
     public Box(int length, int width, int height) {
         this.capacityFromWarehouse = new Warehouse();
-        if (capacityFromWarehouse.getCapacityWarehouse() == counter){
-                            throw new IllegalArgumentException("Склад заполнен");
-        }
-        else {
+        if (capacityFromWarehouse.getCapacityWarehouse() == counter) {
+            throw new IllegalArgumentException("Склад заполнен");
+        } else {
             counter++;
             if (length <= 0 || width <= 0 || height <= 0) {
                 throw new IllegalArgumentException("Ошибка: Проверьте вводимые параметры Д х Ш х В");
@@ -101,7 +100,7 @@ public class Box {
         return material;
     }
 
-    public static int getCounter(){
+    public static int getCounter() {
         return counter;
     }
 

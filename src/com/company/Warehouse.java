@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Random;
 
-public class Warehouse {
+public class Warehouse{
     private static final int capacityWarehouse = 30;
     private static int counterWarehouse;
     private int capacity;
@@ -58,6 +58,7 @@ public class Warehouse {
         Random random = new Random();
         return random.nextInt(1, 100);
     }
+
 
 //    @Override
 //    public String toString(){

@@ -47,12 +47,12 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-
-//        box1.printCountBoxes();
-//        box1.checkOrder();
+ColorBox box1 = new ColorBox(1,1,1, Material.OTHER, ColorVariant.BLACK);
+        box1.printCountBoxes();
+        System.out.println(box1.getCounter());
 
         try {
-            Warehouse b1 = new Warehouse(2,1,1,1);
+            Warehouse b1 = new Warehouse(2,1,1,3);
             System.out.println(Warehouse.printArrayBoxes());
             System.out.println(Warehouse.valueWarehouseLeft());
         } catch (IllegalArgumentException e) {
@@ -72,7 +72,7 @@ public class Main {
         System.out.println(Warehouse.printArrayBoxes());
         System.out.println(Warehouse.valueWarehouseLeft());
 
-//        System.out.println(Ware
+        System.out.println(Warehouse.valueWarehouseLeft() + box1.getCounter());
 
     }
 

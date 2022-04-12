@@ -10,6 +10,9 @@ public class Box {
 
     public Box(int length, int width, int height) {
         counter++;
+        if (length <= 0 || width <= 0 || height <= 0) {
+            throw new IllegalArgumentException("Ошибка: Проверьте вводимые параметры Д х Ш х В");
+        }
         this.length = length;
         this.width = width;
         this.height = height;
@@ -89,6 +92,10 @@ public class Box {
 
     public Material getMaterial() {
         return material;
+    }
+
+    public int getCounter(){
+        return counter;
     }
 
     public int capacity(int a, int b, int c) {

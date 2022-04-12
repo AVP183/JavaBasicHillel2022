@@ -3,7 +3,7 @@ package com.company;
 import java.util.Random;
 
 public class Warehouse {
-    private static final int capacityWarehouse = 30;
+    private static final int capacityWarehouse = 2;
     private static int counterWarehouse;
     private static int res;
     private int capacity;
@@ -11,10 +11,15 @@ public class Warehouse {
     private int length;
     private int width;
     private int height;
-    private static Box countBox;
+
+    public Warehouse(){
+    }
+
+    public int getCapacityWarehouse(){
+        return capacityWarehouse;
+    }
 
     public Warehouse(int length, int width, int height, int capacity) {
-        this.countBox = new Box();
             if (length <= 0 || width <= 0 || height <= 0) {
                 throw new IllegalArgumentException("Ошибка: Проверьте вводимые параметры Д х Ш х В");
             }
@@ -29,7 +34,7 @@ public class Warehouse {
                 }
             }
         } else {
-            System.out.println("Склад заполнен!");
+            System.out.println("Склад заполнен");
         }
     }
 
@@ -49,13 +54,8 @@ public class Warehouse {
         }
     }
 
-    public static int ghghj(){
-        int res = countBox.getCounter() + counterWarehouse;
-        return res;
-    }
-
     public static int valueWarehouseLeft() {
-        return capacityWarehouse - res;
+        return capacityWarehouse - Box.getCounter();
     }
 
     public static int printArrayBoxes() {

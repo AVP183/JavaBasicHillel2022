@@ -2,16 +2,19 @@ package com.company;
 
 import java.util.Random;
 
-public class Warehouse{
+public class Warehouse {
     private static final int capacityWarehouse = 30;
     private static int counterWarehouse;
+    private static int res;
     private int capacity;
     private static Box[] arrayAllBox;
     private int length;
     private int width;
     private int height;
+    private static Box countBox;
 
     public Warehouse(int length, int width, int height, int capacity) {
+        this.countBox = new Box();
             if (length <= 0 || width <= 0 || height <= 0) {
                 throw new IllegalArgumentException("Ошибка: Проверьте вводимые параметры Д х Ш х В");
             }
@@ -46,8 +49,13 @@ public class Warehouse{
         }
     }
 
+    public static int ghghj(){
+        int res = countBox.getCounter() + counterWarehouse;
+        return res;
+    }
+
     public static int valueWarehouseLeft() {
-        return capacityWarehouse - counterWarehouse;
+        return capacityWarehouse - res;
     }
 
     public static int printArrayBoxes() {
@@ -61,9 +69,11 @@ public class Warehouse{
 
 
 //    @Override
-//    public String toString(){
-//        StringBuilder resault = new StringBuilder();
-//        resault.append("На складе коробка с длиной = ");
-//        return resault.toString();
-//    }
+    public String toString(){
+        StringBuilder resault = new StringBuilder();
+        resault.append("Длина коробки = ").append(length)
+                .append(" см, ширина коробки = ").append(width)
+                .append(" см, высота коробки = ").append(height);
+        return resault.toString();
+    }
 }

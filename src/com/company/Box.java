@@ -8,6 +8,10 @@ public class Box {
     private static int counter = 0;
     private static int countErrors = 0;
 
+    public Box(){
+
+    }
+
     public Box(int length, int width, int height) {
         counter++;
         if (length <= 0 || width <= 0 || height <= 0) {
@@ -94,7 +98,7 @@ public class Box {
         return material;
     }
 
-    public int getCounter(){
+    public static int getCounter(){
         return counter;
     }
 

@@ -47,12 +47,13 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-ColorBox box1 = new ColorBox(1,1,1, Material.OTHER, ColorVariant.BLACK);
+        ColorBox box1 = new ColorBox(1, 1, 1, Material.OTHER, ColorVariant.BLACK);
         box1.printCountBoxes();
+        System.out.println(box1.printBoxColorMaterial());
         System.out.println(box1.getCounter());
 
         try {
-            Warehouse b1 = new Warehouse(2,1,1,3);
+            Warehouse b1 = new Warehouse(2, 1, 1, 3);
             System.out.println(Warehouse.printArrayBoxes());
             System.out.println(Warehouse.valueWarehouseLeft());
         } catch (IllegalArgumentException e) {
@@ -60,19 +61,27 @@ ColorBox box1 = new ColorBox(1,1,1, Material.OTHER, ColorVariant.BLACK);
         }
 
 
-        Warehouse b2 = new Warehouse(3,2,3,4);
-        System.out.println(Warehouse.printArrayBoxes());
-        System.out.println(Warehouse.valueWarehouseLeft());
-        Warehouse.addBoxToWarehouse(3);
+        Warehouse b2 = new Warehouse(3, 2, 3, 4);
         System.out.println(Warehouse.printArrayBoxes());
         System.out.println(Warehouse.valueWarehouseLeft());
 
-        Warehouse.addBoxToWarehouse(22);
-        Warehouse.addBoxToWarehouse(88);
+        Warehouse b21 = new Warehouse(3, 2, 3, 4);
+//        System.out.println(Warehouse.toString());
         System.out.println(Warehouse.printArrayBoxes());
         System.out.println(Warehouse.valueWarehouseLeft());
 
-        System.out.println(Warehouse.valueWarehouseLeft() + box1.getCounter());
+        System.out.println(Warehouse.ghghj());
+        System.out.println(Box.getCounter());
+//        Warehouse.addBoxToWarehouse(3);
+//        System.out.println(Warehouse.printArrayBoxes());
+//        System.out.println(Warehouse.valueWarehouseLeft());
+//
+//        Warehouse.addBoxToWarehouse(22);
+//        Warehouse.addBoxToWarehouse(88);
+//        System.out.println(Warehouse.printArrayBoxes());
+//        System.out.println(Warehouse.valueWarehouseLeft());
+
+//        System.out.println(Warehouse.valueWarehouseLeft() + box1.getCounter());
 
     }
 

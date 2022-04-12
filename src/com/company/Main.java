@@ -77,12 +77,13 @@ public class Main {
         }
 
         try {
-            Warehouse.addBoxToWarehouse(32);
+            Warehouse.addBoxToWarehouse(2);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+Warehouse b22 = new Warehouse(1,1,1,5);
+        System.out.println(b22.toString());
 
-//        System.out.println(Warehouse.);
 
         System.out.println("Свободных мест на складе: " + Warehouse.valueWarehouseLeft());
 

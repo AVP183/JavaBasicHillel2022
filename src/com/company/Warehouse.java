@@ -11,12 +11,7 @@ public class Warehouse {
     private int length;
     private int width;
     private int height;
-
-    public Warehouse() {
-    }
-
-    public int getCapacityWarehouse() {
-        return capacityWarehouse;
+    public Warehouse(){
     }
 
     public Warehouse(int length, int width, int height, int capacity) {
@@ -67,13 +62,20 @@ public class Warehouse {
         return random.nextInt(1, 100);
     }
 
+    public int getCapacityWarehouse() {
+        return capacityWarehouse;
+    }
 
     @Override
     public String toString() {
         StringBuilder resault = new StringBuilder();
-        resault.append("Длина коробки = ").append(length)
-                .append(" см, ширина коробки = ").append(width)
-                .append(" см, высота коробки = ").append(height);
+        for (Box item: arrayAllBox) {
+            resault.append("\n"+item+"\n");
+        }
+//        for (int i = 0; i < 4; i++) {
+//            resault.append("Длина коробки = ").append(arrayAllBox[i]);
+//        }
+
         return resault.toString();
     }
 }

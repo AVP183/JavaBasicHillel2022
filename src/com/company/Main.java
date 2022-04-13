@@ -5,6 +5,7 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
+
         try {
             ColorBox colorBox1 = new ColorBox(randomValue(), randomValue(), randomValue(),
                     Material.getMatirial(Material.randomMatirial()), ColorVariant.getColor(ColorVariant.randomColor()));
@@ -52,37 +53,37 @@ public class Main {
         }
 
 
-        try {
-            Warehouse b1 = new Warehouse(2, 1, 1, 3);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            Warehouse b2 = new Warehouse(3, 2, 3, 4);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            Warehouse b3 = new Warehouse(3, 2, 3, 4);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            Warehouse.addBoxToWarehouse(3);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
+//        try {
+//            Warehouse b1 = new Warehouse(2, 1, 1, 3);
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        try {
+//            Warehouse b2 = new Warehouse(3, 2, 3, 4);
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        try {
+//            Warehouse b3 = new Warehouse(3, 2, 3, 4);
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        try {
+//            Warehouse.addBoxToWarehouse(3);
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
 
         try {
             Warehouse.addBoxToWarehouse(2);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
-Warehouse b22 = new Warehouse(1,1,1,5);
-        System.out.println(b22.toString());
+//Warehouse b22 = new Warehouse(1,1,1,5);
+//        System.out.println(b22.toString());
 
 
         System.out.println("Свободных мест на складе: " + Warehouse.valueWarehouseLeft());

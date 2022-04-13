@@ -7,10 +7,12 @@ public class Warehouse {
     private static int counterWarehouse;
     private static int res;
     private int capacity;
-    private static Box[] arrayAllBox;
+    private static Box[] arrayAllBox = new Box[capacityWarehouse];
     private int length;
     private int width;
     private int height;
+    private Box BoxNet;
+
     public Warehouse(){
     }
 
@@ -18,7 +20,6 @@ public class Warehouse {
         if (length <= 0 || width <= 0 || height <= 0) {
             throw new IllegalArgumentException("Ошибка: Проверьте вводимые параметры Д х Ш х В");
         }
-        arrayAllBox = new Box[capacity];
 //        if (counterWarehouse < capacityWarehouse) {
         for (int i = 0; i < capacity; i++) {
             counterWarehouse++;
@@ -33,8 +34,9 @@ public class Warehouse {
 //        }
     }
 
+
+
     public static void addBoxToWarehouse(int capacity) {
-        arrayAllBox = new Box[capacity];
         if (counterWarehouse < capacityWarehouse) {
             for (int i = 0; i < capacity; i++) {
                 counterWarehouse++;

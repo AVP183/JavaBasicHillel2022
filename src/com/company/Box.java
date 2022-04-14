@@ -141,11 +141,16 @@ public class Box{
     @Override
     public String toString() {
         StringBuilder resault = new StringBuilder();
+        if (material == null){
+            resault.append("Длина коробки = ").append(length)
+                    .append(" см, ширина коробки = ").append(width)
+                    .append(" см, высота коробки = ").append(height);
+        }
+        else{
         resault.append("Длина коробки = ").append(length)
                 .append(" см, ширина коробки = ").append(width)
                 .append(" см, высота коробки = ").append(height)
-                .append(" см, материал коробки: ").append(material);
+                .append(" см, материал коробки: ").append(material);}
         return resault.toString();
     }
-
 }

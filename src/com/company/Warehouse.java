@@ -21,7 +21,7 @@ public class Warehouse {
         if (counterWarehouse < capacityWarehouse) {
             for (int i = 0; i < capacity; i++) {
                 counterWarehouse++;
-                arrayAllBox[i] = new Box(length, width, height);
+                arrayAllBox[i] = new Box(length, width, height, Material.OTHER, ColorVariant.BLUE);
                 System.out.println(arrayAllBox[i]);
                 if (counterWarehouse == capacityWarehouse) {
                     break;
@@ -36,7 +36,7 @@ public class Warehouse {
         if (counterWarehouse < capacityWarehouse) {
             for (int i = 0; i < capacity; i++) {
                 counterWarehouse++;
-                arrayAllBox[i] = new Box(random(), random(), random());
+                arrayAllBox[i] = new Box(random(), random(), random(), Material.OTHER, ColorVariant.BLUE);
                 System.out.println(arrayAllBox[i]);
                 if (counterWarehouse == capacityWarehouse) {
                     break;

@@ -8,7 +8,7 @@ public class Box{
     private static int counter = 0;
     private static int countErrors = 0;
 
-    public Box(int length, int width, int height) {
+    public Box(int length, int width, int height, Material other, ColorVariant blue) {
         counter++;
         if (length <= 0 || width <= 0 || height <= 0) {
             throw new IllegalArgumentException("Ошибка: Проверьте вводимые параметры Д х Ш х В");
@@ -19,8 +19,12 @@ public class Box{
     }
 
     public Box(int length, int width, int height, Material material) {
-        this(length, width, height);
+        this(length, width, height, Material.OTHER, ColorVariant.BLUE);
         this.material = material;
+    }
+
+    public Box(int length, int width, int height) {
+        this(length, width, height, Material.OTHER, ColorVariant.BLUE);
     }
 
     public void setLength(int length) {

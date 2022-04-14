@@ -1,8 +1,5 @@
 package com.company;
 
-import jdk.swing.interop.SwingInterOpUtils;
-
-import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -90,14 +87,9 @@ public class Main {
         System.out.println("Колличество произведенных коробок: " + Box.getCounter());
 
         Stack stack = new StorageBoxes();
-        stack.push(new Box(1,1,1));
-        stack.push(new Box(1,1,1));
-        stack.push(new Box(1,1,1));
-        stack.push(new Box(1,1,1));
-        stack.push(new Box(1,1,1));
-        stack.push(new Box(1,1,1));
-        stack.push(new Box(1,1,1));
-        stack.push(new Box(1,1,1));
+        stack.push(new Box(1,2,3));
+        stack.push(new Box(1,2,3, Material.OTHER));
+        stack.push(new Box(2,3,5,Material.PLASTIC, ColorVariant.BLUE));
         System.out.println(stack);
     }
 

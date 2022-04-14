@@ -1,11 +1,13 @@
 package com.company;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-
         try {
             ColorBox colorBox1 = new ColorBox(randomValue(), randomValue(), randomValue(),
                     Material.getMatirial(Material.randomMatirial()), ColorVariant.getColor(ColorVariant.randomColor()));
@@ -53,48 +55,55 @@ public class Main {
         }
 
 
-//        try {
-//            Warehouse b1 = new Warehouse(2, 1, 1, 3);
-//        } catch (IllegalArgumentException e) {
-//            System.out.println(e.getMessage());
-//        }
-//
-//        try {
-//            Warehouse b2 = new Warehouse(3, 2, 3, 4);
-//        } catch (IllegalArgumentException e) {
-//            System.out.println(e.getMessage());
-//        }
-//
-//        try {
-//            Warehouse b3 = new Warehouse(3, 2, 3, 4);
-//        } catch (IllegalArgumentException e) {
-//            System.out.println(e.getMessage());
-//        }
-//
-//        try {
-//            Warehouse.addBoxToWarehouse(3);
-//        } catch (IllegalArgumentException e) {
-//            System.out.println(e.getMessage());
-//        }
+        try {
+            Warehouse b1 = new Warehouse(2, -1, 1, 3);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            Warehouse b2 = new Warehouse(-3, 2, 3, 4);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            Warehouse b3 = new Warehouse(3, 2, -3, 4);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            Warehouse.addBoxToWarehouse(3);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
 
         try {
             Warehouse.addBoxToWarehouse(2);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
-//Warehouse b22 = new Warehouse(1,1,1,5);
-//        System.out.println(b22.toString());
 
+        System.out.println("Требуется коробок: " + Warehouse.valueWarehouseLeft());
 
-        System.out.println("Свободных мест на складе: " + Warehouse.valueWarehouseLeft());
+        System.out.println("Колличество произведенных коробок: " + Box.getCounter());
 
-        System.out.println("Колличество готовых коробок на складе: " + Box.getCounter());
-
+        Stack stack = new StorageBoxes();
+        stack.push(new Box(1,1,1));
+        stack.push(new Box(1,1,1));
+        stack.push(new Box(1,1,1));
+        stack.push(new Box(1,1,1));
+        stack.push(new Box(1,1,1));
+        stack.push(new Box(1,1,1));
+        stack.push(new Box(1,1,1));
+        stack.push(new Box(1,1,1));
+        System.out.println(stack);
     }
 
     public static int randomValue() {
         Random random = new Random();
-        return random.nextInt(1, 101);
+        return random.nextInt(-10, 101);
     }
 
 

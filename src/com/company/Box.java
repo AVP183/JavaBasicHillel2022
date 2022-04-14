@@ -1,27 +1,21 @@
 package com.company;
 
-public class Box {
+public class Box{
     private int length;
     private int width;
     private int height;
     private Material material;
     private static int counter = 0;
     private static int countErrors = 0;
-    private Warehouse capacityFromWarehouse;
 
     public Box(int length, int width, int height) {
-        this.capacityFromWarehouse = new Warehouse();
-        if (capacityFromWarehouse.getCapacityWarehouse() == counter) {
-            throw new IllegalArgumentException("Склад заполнен");
-        } else {
-            counter++;
-            if (length <= 0 || width <= 0 || height <= 0) {
-                throw new IllegalArgumentException("Ошибка: Проверьте вводимые параметры Д х Ш х В");
-            }
-            this.length = length;
-            this.width = width;
-            this.height = height;
+        counter++;
+        if (length <= 0 || width <= 0 || height <= 0) {
+            throw new IllegalArgumentException("Ошибка: Проверьте вводимые параметры Д х Ш х В");
         }
+        this.length = length;
+        this.width = width;
+        this.height = height;
     }
 
     public Box(int length, int width, int height, Material material) {
@@ -149,4 +143,5 @@ public class Box {
                 .append(" см, материал коробки: ").append(material);
         return resault.toString();
     }
+
 }

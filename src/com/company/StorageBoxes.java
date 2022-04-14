@@ -12,9 +12,10 @@ public class StorageBoxes implements Stack {
 
     @Override
     public void push(Box value) {
-        if (top == capacity - 1){
+        if (top == capacity - 1) {
             System.out.println("Склад полный.");
-        } else{
-        storageOfBox[++top] = value;}
+        } else {
+            storageOfBox[++top] = value;
+        }
     }
 }
